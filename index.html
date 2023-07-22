@@ -1,0 +1,130 @@
+<html>
+<meta charset='UTF-8' />
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5'
+name='viewport' />
+<meta content='IE=edge' http-equiv='X-UA-Compatible' />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+<script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+<link href="https://IniUntukmu.feeldream.repl.co/style.css" rel="stylesheet" type="text/css" />
+<script src="https://IniUntukmu.feeldream.repl.co/script.js"></script>
+
+<head>
+  <!-- 
+This code was made by Rayya R
+Blog: https://sinkronin.com
+Instagram: rayyarrr
+TikTok: rayyarr_
+-->
+</head>
+
+<body>
+  <div id="bodyblur"><img src="https://i.postimg.cc/pLd7XMrW/wallpaper.jpg" width="100%" height="100%" /></div>
+
+  <!-- Isi Konten -->
+  <div id='Content'>
+    <div class="image"><img id="ftawal" src="https://i.postimg.cc/C1Gd38bQ/heart-happy.gif" width="130px"
+      height="130px" /></div>
+      <!--<div id="sp1"></div>-->
+      <div>
+        <blockquote data-text='&#9829;'>
+          <p id="namamu"></p>
+          <p id="text"></p>
+          <p id="text2"></p>
+          <p id="text3"></p>
+          <p id="akhiran" onClick="mulaiakhir();this.onclick=null;">[ Klik LOVE ini &#128157; ]</p>
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- Isi Konten Kedua -->
+    <div id='k2'>
+      <div class="image">
+        <img id="ftdua" src="https://i.postimg.cc/SR1SZGY3/bear-run-cant-run.gif" width="130px" height="130px" />
+      </div>
+      <p id="final1"></p>
+      <p id="idkirim" onClick="menuju();">[ Kirim Pesan ]</p>
+    </div>
+
+    <script>
+      function nonFo() {document.getElementById('idfoto').style.display = "none";} function showFo() {document.getElementById('idfoto').style.display = "block";}
+      function nonDiv() {document.getElementById('Content').style = "opacity:0;visibility:hidden;";} function showDiv() {setTimeout(ketik, 1600); document.getElementById('Content').style.opacity = "1"; document.getElementById('Content').style.margin = "0"; document.getElementById('Content').style.animation = "kont 3s infinite"; document.getElementById('ftawal').style = "transform:scale(1);";}
+      function showAkhir() {setInterval(createHeart, 200); document.getElementById('bodyblur').style = "opacity:1;"; document.getElementById('k2').style = "opacity:1;transform:scale(1);margin:0;"; document.getElementById('ftdua').style = "transform:scale(1);"; document.getElementById('final1').style = "transform:scale(1);"; document.getElementById('Content').style.display = "none";}
+      function mulaiakhir() {nonDiv(); setTimeout(showAkhir, 1400); setTimeout(finalis, 2400);}
+      function showTom() {document.getElementById('idkirim').style = "opacity:1;visibility:visible;margin-top:140px;";}
+
+      var i = 0, text; text = ""; var u = 0, text2; text2 = ""; var o = 0, text3; text3 = ""; var a = 0, final1; final1 = "";
+
+      function ketik() {
+        if (i < text.length) {document.getElementById("text").innerHTML += text.charAt(i); i++; setTimeout(ketik, 200);}
+        if (i == text.length) {ketikk();}
+      }
+      function ketikk() {
+        if (u < text2.length) {document.getElementById("text2").innerHTML += text2.charAt(u); u++; setTimeout(ketikk, 250);}
+        if (u == text2.length) {ketikkk();}
+      }
+      function ketikkk() {
+        if (o < text3.length) {document.getElementById("text3").innerHTML += text3.charAt(o); o++; setTimeout(ketikkk, 350);}
+        if (o == text3.length) {document.getElementById("akhiran").style = "display:block";}
+      }
+      function finalis() {
+        if (a < final1.length) {document.getElementById("final1").innerHTML += final1.charAt(a); a++; setTimeout(finalis, 100);}
+        if (a == final1.length) {setTimeout(showTom, 500);}
+      }
+    </script>
+
+    <script type="text/javascript">
+      const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', }); const swalsy = Swal.mixin({confirmButtonText: 'Iya', allowOutsideClick: false, }); const swalst = Swal.mixin({allowOutsideClick: false, showConfirmButton: false, timer: 1500, timerProgressBar: true, });
+
+      function play() {var audio = new Audio('' + linkmp3); audio.play();}
+      async function menuju() {if (a == final1.length) {window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;} }
+
+      async function mulaitanya() {
+        var {isConfirmed: tanyawal}
+        = await swals.fire({
+          title: `Mau isi nama dulu atau langsung aja Div?`, 
+          imageUrl: 'https://i.postimg.cc/vDFQZzhM/yyy.gif', imageWidth: 120, imageHeight: 120, confirmButtonText: 'Isi Nama', cancelButtonText: 'Langsung Aja', allowOutsideClick: false, showCancelButton: true,
+        }); if (tanyawal) {mulai();} else {nama = 'Diva cangtip'; lanjut(); play();}
+      }
+
+      async function mulai() {
+        var {value: nama} = await swals.fire({
+          title: 'Masukin nama kamu',
+          input: 'text',
+          imageUrl: 'https://i.postimg.cc/vDFQZzhM/yyy.gif', imageWidth: 120, imageHeight: 120,
+          allowOutsideClick: false,
+          showCancelButton: false,
+        });
+        if (nama && nama.length < 11) {
+          window.nama = nama;
+          lanjut(); play();
+        } else {
+          await swals.fire('Ups!', 'Nama tidak boleh kosong atau lebih dari 10 karakter, ya!');
+          mulai();
+        }
+      }
+
+    //GANTI SEMUA TEKS, PESAN WHATSAPP, DAN AUDIO DI SINI
+
+    async function lanjut() {
+      document.getElementById("namamu").innerHTML = "Haii, " + nama + "!";
+
+      text="Makasih ya udah mau balas chat aku kemarin😝, jarang ada ceue kayak kamu, yang mau balas cepat🙃" ;     text2="Div, aku mau bilang..." ;              text3 ="tetap menyerah jangan semangat, wkwk canda😁";  
+      final1 = "pesan babang niko hari ini, jangan malas makan, okeh!❤️";     
+      pesanwhatsapp = "Awwww ><";
+
+      linkmp3 = "Songs.mp3";
+
+      showDiv();
+    }
+
+    mulaitanya();
+  </script>
+  <script>
+    const body = document.querySelector("body"); function createHeart() {const heart = document.createElement("div"); heart.className = "fas fa-heart"; heart.style.left = (Math.random() * 90) + "vw"; heart.style.animationDuration = (Math.random() * 3) + 2 + "s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-heart"); if (heartArr.length > 100) {heartArr[0].remove()} }, 100);
+  </script>
+</body>
+
+</html>
